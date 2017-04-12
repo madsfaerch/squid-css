@@ -228,9 +228,9 @@ Specify the wanted delimiter.
 
 
 ##### Breakpoint delimiter
-By default the size delimiter and the breakpoint delimiter are identical. Override that prodiving a specific string for the breakpoint delimiter.
+By default the size delimiter and the breakpoint delimiter are identical. Override that, by providing a specific string for the breakpoint delimiter.
 ```
-"width-3-medium" -> "width-3--medium"
+"width_3_medium" -> "width_3--medium"
 ```
 `$breakpoint-delimiter: $size-delimiter !default`
 
