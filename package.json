@@ -1,0 +1,34 @@
+{
+  "name": "squid-css",
+  "version": "1.0.0",
+  "description": "A light, vw-based CSS framework for a square grid",
+  "main": "index.js",
+  "devDependencies": {
+    "node-sass": "^4.5.2"
+  },
+  "scripts": {
+    "dist": "node-sass src/squid.sass dist/squid.css",
+    "dev": "node-sass --watch --output dist src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madsfaerch/squid-css.git"
+  },
+  "keywords": [
+    "css",
+    "grid",
+    "square",
+    "square",
+    "grid",
+    "squid",
+    "grid",
+    "system",
+    "sass"
+  ],
+  "author": "Mads Færch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madsfaerch/squid-css/issues"
+  },
+  "homepage": "https://github.com/madsfaerch/squid-css#readme"
+}
