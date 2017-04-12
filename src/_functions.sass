@@ -3,19 +3,19 @@
 
 
 //  Calculate length from number of grid rectangles
-    @squareSize Number of grid rectangles
+    @square-size Number of grid rectangles
     @columns Number of columns
     @return Length in vw
-@function calculateViewportWidth($squareSize)
-  @return ($squareSize * 100 / $columns) + vw
+@function calculate-viewport-width($square-size)
+  @return ($square-size * 100 / $columns) + vw
 
 
 //  Calculate length from number of grid rectangles and site max width
-    @squareSize Number of grid squares
+    @square-size Number of grid squares
     @columns Number of columns
     @squid-max-width Max width of site
     @return Length in pixels
-@function calculateMaxSize($squareSize)
+@function calculate-max-size($square-size)
   @if($squid-max-width == 'none')
     @return none
-  @return $squareSize * $squid-max-width / $columns
+  @return $square-size * $squid-max-width / $columns

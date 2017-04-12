@@ -9,19 +9,19 @@
 
 // Calculate height of grid rectangle
 =height($height)
-  height: calculateViewportWidth($height)
+  height: calculate-viewport-width($height)
   @if ($squid-max-width != 'none')
-    max-height: calculateMaxSize($height)
+    max-height: calculate-max-size($height)
 
 // Calculate width of grid rectangle
 =width($width)
-  width: calculateViewportWidth($width)
+  width: calculate-viewport-width($width)
   @if ($squid-max-width != 'none')
-    max-width: calculateMaxSize($width)
+    max-width: calculate-max-size($width)
 
 // Calculate margin from direction and distance
 =margin($direction, $distance)
-  margin-#{$direction}: calculateViewportWidth($distance)
+  margin-#{$direction}: calculate-viewport-width($distance)
   @if ($squid-max-width != 'none')
     +min-squid-max-width
-      margin-#{$direction}: calculateMaxSize($distance)
+      margin-#{$direction}: calculate-max-size($distance)
