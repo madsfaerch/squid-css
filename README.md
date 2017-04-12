@@ -43,7 +43,7 @@ To specify a rectangle's dimensions use `w-<size-value>` for width and `h-<size-
 
 For example, add the classes `w-1` and `h-1` for a 1 by 1 square. By default squid uses 12-column system, so `w-1` and `h-1` will equate to a width and height of `8.333vw` (100vw/12 * 1).
  
-```
+```html
 <div class="row">
   <div class="grid-item w-1 h-1">
     I'm a perfect square!
@@ -52,7 +52,7 @@ For example, add the classes `w-1` and `h-1` for a 1 by 1 square. By default squ
 ```
 
 Make rectangles with other proportions simply by changing the width or height class:
-```
+```html
 <div class="row">
   <div class="grid-item w-2 h-1">
     I'm a 2 by 1 rectangle!
@@ -61,7 +61,7 @@ Make rectangles with other proportions simply by changing the width or height cl
 ```
 
 Adding is just like any other grid:
-```
+```html
 <div class="row">
   <div class="grid-item w-1 h-1">
     I'm a perfect square!
@@ -78,7 +78,7 @@ squid offsets content by using classes that add margin to the element.
 By default these classes are named `t-<offset-value>`, `r-<offset-value>`, `b-<offset-value>` and `l-<offset-value>` corresponding to `margin-top`, `margin-right`, `margin-bottom` and `margin-left` respectively. 
 
 For a 2 by 2 square that is left offset by 2:
-```
+```html
 <div class="row">
   <div class="grid-item w-2 h-2 l-2">
     I'm offset by 2!
@@ -91,7 +91,7 @@ With squid you can add (and name) as many breakpoints as you would like.
 By default, squid ships with 3: `sm` , `md` and `lg`.
 
 For a offset-by-1 10x4 rectangle that is offset-by-2 and 8x6 after the medium breakpoint:
-```
+```html
 <div class="row">
   <div class="grid-item w-10 h-4 l-1 w-8-md h-4-md l-2-md">
     I change sizes!
@@ -106,7 +106,7 @@ To show and hide elements at specific breakpoints you can utilise `show-<breakpo
 The `show`-classes will hide an element *before* the specified breakpoint.
 The `hide`-classes will hide an element *after* the specified breakpoint.
 
-```
+```html
 <div class="row">
   <div class="grid-item w-12 h-1 show-lg">
     I'm visible after the large breakpoint!
@@ -121,8 +121,22 @@ The `hide`-classes will hide an element *after* the specified breakpoint.
 ```
 
 ### Helpers
-By default squid ships with a set helpers that helps you layout quickly.
+By default squid ships with a set helpers that helps you layout quickly. They most change flexbox values and margins.
 There are reasons not to include the helpers. Maybe you have your own or prefer to use less classes and write more CSS. 
 
 To disable: `$compile-helpers: false`
 
+| Class name               | Function                         |
+|--------------------------|----------------------------------|
+| .flex                    | `display: flex`                  |
+| .align-start             | `margin-right: auto`             |
+| .align-end               | `margin-left: auto`              |
+| .center-self             | `margin-left: auto` `margin-right: auto` |
+| .align-top               | `align-self: flex-start`         |
+| .align-bottom            | `align-self: flex-end`           |
+| .align-items-end         | `align-items: flex-end`          |
+| .align-items-center      | `align-items: center`            |
+| .justify-content-between | `justify-content: space-between` |
+| .justify-content-end     | `justify-content: flex-end`      |
+| .justify-content-center  | `justify-content: center`        | 
+| .flex-wrap               | `flex-wrap: wrap`                |
