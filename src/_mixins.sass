@@ -1,0 +1,27 @@
+// Squid Mixins
+// ============
+
+// Media query
+=min-site-max-width
+  @if ($site-max-width != 'none')
+    @media (min-width: $site-max-width)
+      @content
+
+// Calculate height of grid rectangle
+=height($height)
+  height: calculateViewportWidth($height)
+  @if ($site-max-width != 'none')
+    max-height: calculateMaxSize($height)
+
+// Calculate width of grid rectangle
+=width($width)
+  width: calculateViewportWidth($width)
+  @if ($site-max-width != 'none')
+    max-width: calculateMaxSize($width)
+
+// Calculate margin from direction and distance
+=margin($direction, $distance)
+  margin-#{$direction}: calculateViewportWidth($distance)
+  @if ($site-max-width != 'none')
+    +min-site-max-width
+      margin-#{$direction}: calculateMaxSize($distance)

@@ -1,0 +1,64 @@
+// ======================== //
+//  S Q U I D  C O N F I G  //
+// ======================== //
+
+// Global prefix
+// -----------------------------------
+// All squid classes will be prefixed with this string.
+// Ideal for namespacing.
+$prefix: 'squid-' !default
+
+// Max width of site
+// ------------------------------------
+// Specify 'none' for a completely fluid layout.
+$site-max-width: 1440px !default
+
+// Columns
+// ------------------------------------
+$columns: 12 !default
+
+// Width, Height and Offset naming
+// ------------------------------------
+
+// Specify the desired name for the width and height of squid's classes
+// w for "w-3-small"
+// col for "col-3-small"
+// Get creative!
+$dimension-prefixes: (width: 'w', height: 'h') !default
+
+// Specify the desired offset directions
+// By default squid will generate offset classes in all directions
+// Removing a key/value pair in the following map will stop squid from generating it.
+// Change the values to change the generated class name
+// left for "left--2--large"
+// l for "l--2--large"
+// push for "push--2--large"
+$offset-prefixes: (top: 't', right: 'r', bottom: 'b', left: 'l') !default
+
+// Breakpoints
+// ---------------------------------
+// Specify your desired breakpoints. Add as many as required.
+// Names of keys will be used in generation of squid classes.
+// lg for "width--3--lg"
+// desktop for "width--3--desktop"
+/// And so forth..
+$breakpoints: ( sm: 480px, md: 700px, lg: 1024px ) !default
+
+// Delimiters
+// ------------------------------------
+// Specify the wanted delimiter
+// - for "width-3-medium"
+// -- for "width--3--medium"
+// _ for "width_3_medium"
+$size-delimiter: '-' !default
+
+// By default the size delimiter and the breakpoint delimiter are identical.
+// E.g. "width-3-medium"
+// But you can overwrite that by changing this value.
+// E.g. "width-3--medium"
+$breakpoint-delimiter: $size-delimiter !default
+
+
+// Compile grid helper classes
+// -----------------------------------
+$compile-helpers: true !default

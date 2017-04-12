@@ -1,0 +1,49 @@
+// Grid Helpers
+// ============
+
+  @each $key, $value in $breakpoints
+    .hide#{$breakpoint-delimiter}#{$key}
+      @media (min-width: $value)
+        display: none
+
+    .show#{$breakpoint-delimiter}#{$key}
+      @media (max-width: #{$value} - 1px)
+        display: none
+
+@if($compile-helpers)
+  .#{$prefix}flex
+    display: flex
+
+  .#{$prefix}align-start
+    margin-right: auto
+
+  .#{$prefix}align-end
+    margin-left: auto
+
+  .#{$prefix}center-self
+    margin-left: auto
+    margin-right: auto
+
+  .#{$prefix}align-top
+    align-self: flex-start
+
+  .#{$prefix}align-bottom
+    align-self: flex-end
+
+  .#{$prefix}align-items-end
+    align-items: flex-end
+
+  .#{$prefix}align-items-center
+    align-items: center
+
+  .#{$prefix}justify-content-between
+    justify-content: space-between
+
+  .#{$prefix}justify-content-end
+    justify-content: flex-end
+
+  .#{$prefix}justify-content-center
+    justify-content: center
+
+  .#{$prefix}flex-wrap
+    flex-wrap: wrap
