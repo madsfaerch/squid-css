@@ -3,28 +3,39 @@ squis.css is a configurable, vw-based **squ**are gr**id** system written in Sass
 
 squid.css does this by using `vw`  for width and height. This enables responsive proportional rectangles.
 
+
 ### Features
 - Uses `vw` for responsive proportionality
 - Built with Flexbox
 - Highly configurable through Sass variables
 - Mobile first
 
+
 ## Browser Support
 squid requires support for `vw` and `display: flex`.
 This means no **UC Browser for Android** and no **Opera Mini**, since they don't support `vw`.
 
+
 ## Installation
 **Clone from GitHub**
-`$ git clone git@github.com:madsfaerch/squid-css.git`
-Use `squid.css` for development and `squid.min.css` for production
+```sh
+$ git clone git@github.com:madsfaerch/squid-css.git
+```
+Use `squid.css` for development and `squid.min.css` for production 
+
+
 **NPM**
-`$ npm install --save squid-css`
-And then add `squid-css"` to your workflow. 
+```sh
+$ npm install --save squid-css
+```
+And then add `squid-css` to your workflow. 
+
 
 ## Usage
 I highly recommend you configure **squid.css** to suit your needs. Check out the configuration chapter to see what's available to you.
 
 Since squid uses `vw `, and not percentages, putting grid-items in a container with a `width` or `max-width` will not stop the elements from growing, since their width is not based on the parent. Instead, use the variable `$squid-max-width` to set a maximum width on the grid.
+
 
 ### Containers
 squid uses two types of containers:
@@ -37,6 +48,7 @@ For larger sections. This keeps your content centered if you use squid with a ma
 .row
 ```
 For rows of content. Use the modifier class `.row-vertical` for vertical rows.
+
 
 ### Width and height
 To specify a rectangle's dimensions use `w-<size-value>` for width and `h-<size-value>` for height.
@@ -100,6 +112,7 @@ For a offset-by-1 10x4 rectangle that is offset-by-2 and 8x6 after the medium br
 ```
 The offset classes include the `0` value for completely removing offsets at specific breakpoints. E.g. `class="l-2 l-0-md"` will remove the left offset after the medium breakpoint.
 
+
 #### Show/hide on breakpoint
 To show and hide elements at specific breakpoints you can utilise `show-<breakpoint>` and `hide-<breakpoint>`.
 
@@ -119,6 +132,7 @@ The `hide`-classes will hide an element *after* the specified breakpoint.
   </div>
 </div>
 ```
+
 
 ### Helpers
 By default squid ships with a set helpers that helps you layout quickly. They most change flexbox values and margins.
@@ -140,3 +154,83 @@ To disable: `$compile-helpers: false`
 | .justify-content-end     | `justify-content: flex-end`      |
 | .justify-content-center  | `justify-content: center`        | 
 | .flex-wrap               | `flex-wrap: wrap`                |
+
+
+### Configuration
+
+#### Global prefix
+All squid classes will be prefixed with this string, making it ideal for namespacing.
+
+`$prefix: '' !default`
+
+
+#### Max width of site
+Specify 'none' for a completely fluid layout.
+
+`$squid-max-width: 1440px !default`
+
+
+#### Columns
+Amount of columns in the grid.
+
+`$columns: 12 !default`
+
+#### Width and height
+Specify the desired name for the width and height of squid's classes.
+```
+'w' for "w-3-small"
+'col' for "col-3-small"
+```
+`$dimension-prefixes: (width: 'w', height: 'h') !default`
+
+#### Specify the desired offset directions
+By default squid will generate offset classes in all directions
+Removing a key/value pair in the following map will stop squid from generating it.
+Change the values to change the generated class name
+```
+'left' for "left--2--large"
+'l' for "l--2--large"
+'push' for "push--2--large"
+```
+`$offset-prefixes: (top: 't', right: 'r', bottom: 'b', left: 'l') !default`
+
+
+#### Breakpoints
+Specify your desired breakpoints. Add as many as required.
+Names of keys will be used in generation of squid classes.
+```
+'lg' for "width--3--lg"
+'desktop' for "width--3--desktop"
+```
+
+`$breakpoints: ( sm: 480px, md: 700px, lg: 1024px ) !default`
+
+
+#### Delimiters
+
+Specify the wanted delimiter.
+
+```
+'-' for "width-3-medium"
+'--' for "width--3--medium"
+'_' for "width_3_medium"
+```
+
+`$size-delimiter: '-' !default`
+
+
+##### Breakpoint delimiter
+By default the size delimiter and the breakpoint delimiter are identical. Override that prodiving a specific string for the breakpoint delimiter.
+```
+"width-3-medium" -> "width-3--medium"
+```
+`$breakpoint-delimiter: $size-delimiter !default`
+
+
+**Compile grid helper classes**
+
+`$compile-helpers: true !default`
+
+
+## License
+MIT
