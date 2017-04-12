@@ -170,19 +170,18 @@ Import it before your `'@import "squid-css"` statement.
 #### Global prefix
 All squid classes will be prefixed with this string, making it ideal for namespacing.
 
-`$prefix: '' !default`
+`$prefix: ''`
 
 
 #### Max width of site
-Specify 'none' for a completely fluid layout.
-*Currently, squid only supports values in pixels.*
-`$squid-max-width: 1440px !default`
+Specify 'none' for a completely fluid layout. Enter 90em, 1440px, 21cm etc., it's all good to squid.
+`$squid-max-width: 90em`
 
 
 #### Columns
 Amount of columns in the grid.
 
-`$columns: 12 !default`
+`$columns: 12`
 
 #### Width and height
 Specify the desired name for the width and height of squid's classes.
@@ -190,7 +189,7 @@ Specify the desired name for the width and height of squid's classes.
 'w' for "w-3-small"
 'col' for "col-3-small"
 ```
-`$dimension-prefixes: (width: 'w', height: 'h') !default`
+`$dimension-prefixes: (width: 'w', height: 'h')`
 
 #### Specify the desired offset directions
 By default squid will generate offset classes in all directions.
@@ -202,7 +201,7 @@ Change the values to change the generated class name
 'l' for "l--2--large"
 'push' for "push--2--large"
 ```
-`$offset-prefixes: (top: 't', right: 'r', bottom: 'b', left: 'l') !default`
+`$offset-prefixes: (top: 't', right: 'r', bottom: 'b', left: 'l')`
 
 
 #### Breakpoints
@@ -213,7 +212,7 @@ Names of keys will be used in generation of squid classes.
 'desktop' for "width--3--desktop"
 ```
 
-`$breakpoints: ( sm: 480px, md: 700px, lg: 1024px ) !default`
+`$breakpoints: ( sm: 30em, md: 45em, lg: 64em)`
 
 
 #### Delimiters
@@ -226,7 +225,7 @@ Specify the wanted delimiter.
 '_' for "width_3_medium"
 ```
 
-`$size-delimiter: '-' !default`
+`$size-delimiter: '-'`
 
 
 ##### Breakpoint delimiter
@@ -234,12 +233,12 @@ By default the size delimiter and the breakpoint delimiter are identical. Overri
 ```
 "width_3_medium" -> "width_3--medium"
 ```
-`$breakpoint-delimiter: $size-delimiter !default`
+`$breakpoint-delimiter: $size-delimiter`
 
 
 **Compile grid helper classes**
 
-`$compile-helpers: true !default`
+`$compile-helpers: true`
 
 
 ## License
