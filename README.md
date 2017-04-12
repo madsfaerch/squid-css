@@ -1,3 +1,5 @@
+<p align="center"><img width="400" alt="Kill me" src="http://138.68.90.19/squid-css@2x.png"></p>
+
 # squid.css
 squis.css is a configurable, vw-based **squ**are gr**id** system written in Sass. Conventional grid system are one dimensional, that is, they typically only define sizes along one axis. **squid** is two dimensional, meaning it allows you to define both the width and height of a "column".
 
