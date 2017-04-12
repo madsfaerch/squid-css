@@ -1,14 +1,14 @@
 // Grid Helpers
 // ============
 
-  @each $key, $value in $breakpoints
-    .hide#{$breakpoint-delimiter}#{$key}
-      @media (min-width: $value)
-        display: none
+@each $key, $value in $breakpoints
+  .#{$prefix}hide#{$breakpoint-delimiter}#{$key}
+    @media (min-width: $value)
+      display: none
 
-    .show#{$breakpoint-delimiter}#{$key}
-      @media (max-width: #{$value} - 1px)
-        display: none
+  .#{$prefix}show#{$breakpoint-delimiter}#{$key}
+    @media (max-width: #{$value})
+      display: none
 
 @if($compile-helpers)
   .#{$prefix}flex
