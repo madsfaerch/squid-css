@@ -45,30 +45,30 @@ For example, add the classes `w-1` and `h-1` for a 1 by 1 square. By default squ
  
 ```
 <div class="row">
-	<div class="grid-item w-1 h-1">
-		I'm a perfect square!
-	</div>
+  <div class="grid-item w-1 h-1">
+    I'm a perfect square!
+  </div>
 </div>
 ```
 
 Make rectangles with other proportions simply by changing the width or height class:
 ```
 <div class="row">
-	<div class="grid-item w-2 h-1">
-		I'm a 2 by 1 rectangle!
-	</div>
+  <div class="grid-item w-2 h-1">
+    I'm a 2 by 1 rectangle!
+  </div>
 </div>
 ```
 
 Adding is just like any other grid:
 ```
 <div class="row">
-	<div class="grid-item w-1 h-1">
-		I'm a perfect square!
-	</div>
-	<div class="grid-item w-2 h-1">
-		I'm a 2 by 1 rectangle!
-	</div>
+  <div class="grid-item w-1 h-1">
+    I'm a perfect square!
+  </div>
+  <div class="grid-item w-2 h-1">
+    I'm a 2 by 1 rectangle!
+  </div>
 </div>
 ```
 
@@ -80,9 +80,9 @@ By default these classes are named `t-<offset-value>`, `r-<offset-value>`, `b-<o
 For a 2 by 2 square that is left offset by 2:
 ```
 <div class="row">
-	<div class="grid-item w-2 h-2 l-2">
-		I'm offset by 2!
-	</div>
+  <div class="grid-item w-2 h-2 l-2">
+    I'm offset by 2!
+  </div>
 </div>
 ```
 
@@ -93,9 +93,9 @@ By default, squid ships with 3: `sm` , `md` and `lg`.
 For a offset-by-1 10x4 rectangle that is offset-by-2 and 8x6 after the medium breakpoint:
 ```
 <div class="row">
-	<div class="grid-item w-10 h-4 l-1 w-8-md h-4-md l-2-md">
-		I change sizes!
-	</div>
+  <div class="grid-item w-10 h-4 l-1 w-8-md h-4-md l-2-md">
+    I change sizes!
+  </div>
 </div>
 ```
 The offset classes include the `0` value for completely removing offsets at specific breakpoints. E.g. `class="l-2 l-0-md"` will remove the left offset after the medium breakpoint.
@@ -108,15 +108,15 @@ The `hide`-classes will hide an element *after* the specified breakpoint.
 
 ```
 <div class="row">
-	<div class="grid-item w-12 h-1 show-lg">
-		I'm visible after the large breakpoint!
-	</div>
-	<div class="grid-item w-12 h-1 hide-lg">
-		I'm visible before the large breakpoint!
-	</div>
-	<div class="grid-item w-12 h-1 show-sm hide-md">
-		I'm visible between the small and medium breakpoint!
-	</div>
+  <div class="grid-item w-12 h-1 show-lg">
+    I'm visible after the large breakpoint!
+  </div>
+  <div class="grid-item w-12 h-1 hide-lg">
+    I'm visible before the large breakpoint!
+  </div>
+  <div class="grid-item w-12 h-1 show-sm hide-md">
+    I'm visible between the small and medium breakpoint!
+  </div>
 </div>
 ```
 
