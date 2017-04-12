@@ -1,0 +1,40 @@
+// Generates grid classes
+// --------------------------------------
+
+// Width and height classes
+$width-prefix: map-get($dimension-prefixes, width)
+$height-prefix: map-get($dimension-prefixes, height)
+@for $i from 1 through $columns
+  .#{$prefix}#{$height-prefix}#{$size-delimiter}#{$i}
+    +height($i)
+
+  .#{$prefix}#{$width-prefix}#{$size-delimiter}#{$i}
+    +width($i)
+
+@each $key, $value in $breakpoints
+  @for $i from 0 through $columns
+    @media (min-width: $value)
+      .#{$prefix}#{$height-prefix}#{$size-delimiter}#{$i}#{$breakpoint-delimiter}#{$key}
+        +height($i)
+
+    @media (min-width: $value)
+      .#{$prefix}#{$width-prefix}#{$size-delimiter}#{$i}#{$breakpoint-delimiter}#{$key}
+        +width($i)
+
+
+// Offset (margin) classes
+// ---------------------------------
+
+// Without media queries
+@each $direction, $offset-prefix in $offset-prefixes
+  @for $i from 1 through $columns / 2
+    .#{$prefix}#{$offset-prefix}#{$size-delimiter}#{$i}
+      +margin($direction, $i)
+
+// Media queries
+@each $direction, $offset-prefix in $offset-prefixes
+  @each $key, $value in $breakpoints
+    @for $i from 0 through $columns / 2
+      @media (min-width: $value)
+        .#{$prefix}#{$offset-prefix}#{$size-delimiter}#{$i}#{$breakpoint-delimiter}#{$key}
+          +margin($direction, $i)

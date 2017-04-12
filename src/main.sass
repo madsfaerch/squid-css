@@ -1,73 +1,7 @@
 // Import
-@import grid-variables
-@import grid-functions
-@import grid-mixins
-
-body
-  width: 100vh
-  overflow-x: hidden
-
-.#{$prefix}container
-  width: 100%
-  @if($site-max-width != 'none')
-    max-width: $site-max-width
-    margin-left: auto
-    margin-right: auto
-
-.#{$prefix}full-container
-  width: 100%
-
-.#{$prefix}row
-  display: flex
-  width: 100%
-  .debug &
-    outline: 1px solid green
-
-.#{$prefix}grid-item
-  width: 100%
-  display: flex
-  .debug &
-    outline: 1px solid magenta
-
-.#{$prefix}grid-item, .#{$prefix}row
-    &--vertical
-      flex-direction: column
-
-// Generate grid width and height classes
-$width-prefix: map-get($dimension-prefixes, width)
-$height-prefix: map-get($dimension-prefixes, height)
-@for $i from 1 through $columns
-  .#{$prefix}#{$height-prefix}#{$size-delimiter}#{$i}
-    +height($i)
-
-  .#{$prefix}#{$width-prefix}#{$size-delimiter}#{$i}
-    +width($i)
-
-@each $key, $value in $breakpoints
-  @for $i from 0 through $columns
-    @media (min-width: $value)
-      .#{$prefix}#{$height-prefix}#{$size-delimiter}#{$i}#{$breakpoint-delimiter}#{$key}
-        +height($i)
-
-    @media (min-width: $value)
-      .#{$prefix}#{$width-prefix}#{$size-delimiter}#{$i}#{$breakpoint-delimiter}#{$key}
-        +width($i)
-
-// Generate offset classes
-// =======================
-
-// Without media queries
-@each $direction, $offset-prefix in $offset-prefixes
-  @for $i from 1 through $columns / 2
-    .#{$prefix}#{$offset-prefix}#{$size-delimiter}#{$i}
-      +margin($direction, $i)
-
-// Media queries
-@each $direction, $offset-prefix in $offset-prefixes
-  @each $key, $value in $breakpoints
-    @for $i from 0 through $columns / 2
-      @media (min-width: $value)
-        .#{$prefix}#{$offset-prefix}#{$size-delimiter}#{$i}#{$breakpoint-delimiter}#{$key}
-          +margin($direction, $i)
-
-@import grid-helpers
+@import variables
+@import functions
+@import mixins
+@import base
+@import generator
+@import helpers
