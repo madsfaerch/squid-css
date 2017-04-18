@@ -150,6 +150,7 @@ To disable: `$compile-helpers: false`
 | .align-end               | `margin-left: auto`              |
 | .center-self             | `margin-left: auto` `margin-right: auto` |
 | .align-top               | `align-self: flex-start`         |
+| .align-center            | `align-self: center`             |
 | .align-bottom            | `align-self: flex-end`           |
 | .align-items-end         | `align-items: flex-end`          |
 | .align-items-center      | `align-items: center`            |
