@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dist": "node-sass src/squid.sass dist/squid.css && node-sass src/squid.sass --output-style compressed dist/squid.min.css",
-    "dev": "node-sass --watch --output dist src"
+    "dev": "node-sass --watch --output dist src",
+    "docs": "node-sass --watch --output docs docs/demo.sass"
   },
   "repository": {
     "type": "git",
