@@ -50,7 +50,7 @@ For larger sections. This keeps your content centered if you use squid with a ma
 ```
 .row
 ```
-For rows of content. Use the modifier class `.row-vertical` for vertical rows.
+For rows of content. Use the modifier class `.row--vertical` for vertical rows.
 
 
 ### Width and height
